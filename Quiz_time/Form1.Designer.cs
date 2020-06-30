@@ -41,9 +41,11 @@
             this.cb_am_nakijken = new System.Windows.Forms.ComboBox();
             this.btn_start_quiz = new System.Windows.Forms.Button();
             this.tab_select = new System.Windows.Forms.TabPage();
+            this.lsb_quizlist = new System.Windows.Forms.ListBox();
             this.tab_edit = new System.Windows.Forms.TabPage();
             this.tab_controll.SuspendLayout();
             this.tab_operator.SuspendLayout();
+            this.tab_select.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab_controll
@@ -177,6 +179,7 @@
             // 
             // tab_select
             // 
+            this.tab_select.Controls.Add(this.lsb_quizlist);
             this.tab_select.Location = new System.Drawing.Point(4, 25);
             this.tab_select.Name = "tab_select";
             this.tab_select.Padding = new System.Windows.Forms.Padding(3);
@@ -184,6 +187,18 @@
             this.tab_select.TabIndex = 1;
             this.tab_select.Text = "select quiz";
             this.tab_select.UseVisualStyleBackColor = true;
+            // 
+            // lsb_quizlist
+            // 
+            this.lsb_quizlist.DisplayMember = "Name";
+            this.lsb_quizlist.FormattingEnabled = true;
+            this.lsb_quizlist.ItemHeight = 16;
+            this.lsb_quizlist.Location = new System.Drawing.Point(8, 6);
+            this.lsb_quizlist.Name = "lsb_quizlist";
+            this.lsb_quizlist.Size = new System.Drawing.Size(154, 404);
+            this.lsb_quizlist.TabIndex = 0;
+            this.lsb_quizlist.ValueMember = "Value";
+            this.lsb_quizlist.SelectedIndexChanged += new System.EventHandler(this.lsb_quizlist_SelectedIndexChanged);
             // 
             // tab_edit
             // 
@@ -206,6 +221,7 @@
             this.tab_controll.ResumeLayout(false);
             this.tab_operator.ResumeLayout(false);
             this.tab_operator.PerformLayout();
+            this.tab_select.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -226,6 +242,7 @@
         private System.Windows.Forms.Button btn_start_quiz;
         private System.Windows.Forms.TabPage tab_select;
         private System.Windows.Forms.TabPage tab_edit;
+        private System.Windows.Forms.ListBox lsb_quizlist;
     }
 }
 
