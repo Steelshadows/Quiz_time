@@ -41,7 +41,9 @@ namespace Quiz_time
         private void lsb_quizlist_SelectedIndexChanged(object sender, EventArgs e)
         {
             dynamic item =  lsb_quizlist.SelectedItem;
-            lb_selec_quizNaam.Text = item.Name;
+            lb_selec_quizNaam_0.Text = item.Name;
+            lb_selec_quizNaam_1.Text = item.Name;
+            lb_selec_quizNaam_2.Text = item.Name;
         }
     }
 }

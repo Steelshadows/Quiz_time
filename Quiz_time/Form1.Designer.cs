@@ -32,7 +32,7 @@
             this.tab_operator = new System.Windows.Forms.TabPage();
             this.btn_selectQuiz = new System.Windows.Forms.Button();
             this.btn_editQuiz = new System.Windows.Forms.Button();
-            this.lb_selec_quizNaam = new System.Windows.Forms.Label();
+            this.lb_selec_quizNaam_0 = new System.Windows.Forms.Label();
             this.lb_sel_label = new System.Windows.Forms.Label();
             this.lb_am_afspeelmodus = new System.Windows.Forms.Label();
             this.lb_am_tijd = new System.Windows.Forms.Label();
@@ -43,9 +43,14 @@
             this.tab_select = new System.Windows.Forms.TabPage();
             this.lsb_quizlist = new System.Windows.Forms.ListBox();
             this.tab_edit = new System.Windows.Forms.TabPage();
+            this.lb_selec_quizNaam_1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lb_selec_quizNaam_2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.tab_controll.SuspendLayout();
             this.tab_operator.SuspendLayout();
             this.tab_select.SuspendLayout();
+            this.tab_edit.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab_controll
@@ -63,7 +68,7 @@
             // 
             this.tab_operator.Controls.Add(this.btn_selectQuiz);
             this.tab_operator.Controls.Add(this.btn_editQuiz);
-            this.tab_operator.Controls.Add(this.lb_selec_quizNaam);
+            this.tab_operator.Controls.Add(this.lb_selec_quizNaam_0);
             this.tab_operator.Controls.Add(this.lb_sel_label);
             this.tab_operator.Controls.Add(this.lb_am_afspeelmodus);
             this.tab_operator.Controls.Add(this.lb_am_tijd);
@@ -99,19 +104,19 @@
             this.btn_editQuiz.UseVisualStyleBackColor = true;
             this.btn_editQuiz.Click += new System.EventHandler(this.btn_editQuiz_Click);
             // 
-            // lb_selec_quizNaam
+            // lb_selec_quizNaam_0
             // 
-            this.lb_selec_quizNaam.AutoSize = true;
-            this.lb_selec_quizNaam.Location = new System.Drawing.Point(16, 39);
-            this.lb_selec_quizNaam.Name = "lb_selec_quizNaam";
-            this.lb_selec_quizNaam.Size = new System.Drawing.Size(89, 17);
-            this.lb_selec_quizNaam.TabIndex = 17;
-            this.lb_selec_quizNaam.Text = "[ quiz naam ]";
+            this.lb_selec_quizNaam_0.AutoSize = true;
+            this.lb_selec_quizNaam_0.Location = new System.Drawing.Point(3, 35);
+            this.lb_selec_quizNaam_0.Name = "lb_selec_quizNaam_0";
+            this.lb_selec_quizNaam_0.Size = new System.Drawing.Size(89, 17);
+            this.lb_selec_quizNaam_0.TabIndex = 17;
+            this.lb_selec_quizNaam_0.Text = "[ quiz naam ]";
             // 
             // lb_sel_label
             // 
             this.lb_sel_label.AutoSize = true;
-            this.lb_sel_label.Location = new System.Drawing.Point(16, 7);
+            this.lb_sel_label.Location = new System.Drawing.Point(3, 3);
             this.lb_sel_label.Name = "lb_sel_label";
             this.lb_sel_label.Size = new System.Drawing.Size(135, 17);
             this.lb_sel_label.TabIndex = 16;
@@ -179,6 +184,8 @@
             // 
             // tab_select
             // 
+            this.tab_select.Controls.Add(this.lb_selec_quizNaam_1);
+            this.tab_select.Controls.Add(this.label2);
             this.tab_select.Controls.Add(this.lsb_quizlist);
             this.tab_select.Location = new System.Drawing.Point(4, 25);
             this.tab_select.Name = "tab_select";
@@ -193,15 +200,17 @@
             this.lsb_quizlist.DisplayMember = "Name";
             this.lsb_quizlist.FormattingEnabled = true;
             this.lsb_quizlist.ItemHeight = 16;
-            this.lsb_quizlist.Location = new System.Drawing.Point(8, 6);
+            this.lsb_quizlist.Location = new System.Drawing.Point(8, 70);
             this.lsb_quizlist.Name = "lsb_quizlist";
-            this.lsb_quizlist.Size = new System.Drawing.Size(154, 404);
+            this.lsb_quizlist.Size = new System.Drawing.Size(154, 340);
             this.lsb_quizlist.TabIndex = 0;
             this.lsb_quizlist.ValueMember = "Value";
             this.lsb_quizlist.SelectedIndexChanged += new System.EventHandler(this.lsb_quizlist_SelectedIndexChanged);
             // 
             // tab_edit
             // 
+            this.tab_edit.Controls.Add(this.lb_selec_quizNaam_2);
+            this.tab_edit.Controls.Add(this.label4);
             this.tab_edit.Location = new System.Drawing.Point(4, 25);
             this.tab_edit.Name = "tab_edit";
             this.tab_edit.Padding = new System.Windows.Forms.Padding(3);
@@ -209,6 +218,42 @@
             this.tab_edit.TabIndex = 2;
             this.tab_edit.Text = "edit quiz";
             this.tab_edit.UseVisualStyleBackColor = true;
+            // 
+            // lb_selec_quizNaam_1
+            // 
+            this.lb_selec_quizNaam_1.AutoSize = true;
+            this.lb_selec_quizNaam_1.Location = new System.Drawing.Point(3, 35);
+            this.lb_selec_quizNaam_1.Name = "lb_selec_quizNaam_1";
+            this.lb_selec_quizNaam_1.Size = new System.Drawing.Size(89, 17);
+            this.lb_selec_quizNaam_1.TabIndex = 19;
+            this.lb_selec_quizNaam_1.Text = "[ quiz naam ]";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(135, 17);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "geselecteerde Quiz:";
+            // 
+            // lb_selec_quizNaam_2
+            // 
+            this.lb_selec_quizNaam_2.AutoSize = true;
+            this.lb_selec_quizNaam_2.Location = new System.Drawing.Point(3, 35);
+            this.lb_selec_quizNaam_2.Name = "lb_selec_quizNaam_2";
+            this.lb_selec_quizNaam_2.Size = new System.Drawing.Size(89, 17);
+            this.lb_selec_quizNaam_2.TabIndex = 21;
+            this.lb_selec_quizNaam_2.Text = "[ quiz naam ]";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(135, 17);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "geselecteerde Quiz:";
             // 
             // Quiz_time
             // 
@@ -222,6 +267,9 @@
             this.tab_operator.ResumeLayout(false);
             this.tab_operator.PerformLayout();
             this.tab_select.ResumeLayout(false);
+            this.tab_select.PerformLayout();
+            this.tab_edit.ResumeLayout(false);
+            this.tab_edit.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -232,7 +280,7 @@
         private System.Windows.Forms.TabPage tab_operator;
         private System.Windows.Forms.Button btn_selectQuiz;
         private System.Windows.Forms.Button btn_editQuiz;
-        private System.Windows.Forms.Label lb_selec_quizNaam;
+        private System.Windows.Forms.Label lb_selec_quizNaam_0;
         private System.Windows.Forms.Label lb_sel_label;
         private System.Windows.Forms.Label lb_am_afspeelmodus;
         private System.Windows.Forms.Label lb_am_tijd;
@@ -243,6 +291,10 @@
         private System.Windows.Forms.TabPage tab_select;
         private System.Windows.Forms.TabPage tab_edit;
         private System.Windows.Forms.ListBox lsb_quizlist;
+        private System.Windows.Forms.Label lb_selec_quizNaam_1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lb_selec_quizNaam_2;
+        private System.Windows.Forms.Label label4;
     }
 }
 
