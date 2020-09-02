@@ -14,18 +14,19 @@ namespace Quiz_time
 {
     class SQLConn
     {
+        private MySqlConnection Conn = new MySqlConnection("Server=localhost;Database=quizTime;user=root;Pwd=;");
         public SQLConn()
         {
         }
-        private MySqlConnection Conn = new MySqlConnection("Server=localhost;Database=quizTime;user=root;Pwd=;");
-        public string[] executeQuery(string query, string[][] qParams){
+        public string[] executeQuery(string query, List<string[]> qParams = null)
+        {
             MySqlCommand cmd = new MySqlCommand(query, Conn);
             string[] res = { "res created" };
-            if(qParams.GetLength(0) > 0)
+            if (qParams != null && qParams.Count() > 0)
             {
-                for (int x = 0; x < qParams.GetLength(0); x += 1)
+                foreach (string[] qParam in qParams)
                 {
-                    cmd.Parameters.AddWithValue(qParams[x][0], qParams[x][1]);                
+                    cmd.Parameters.AddWithValue(qParam[0], qParam[1]);
                 }
             }
             Conn.Open();
@@ -36,15 +37,13 @@ namespace Quiz_time
 
             return res;
         }
-        public DataTable selectQuery(string query, string[][] qParams = null)
+        public DataTable selectQuery(string query, List<string[]> qParams = null)
         {
             MySqlCommand cmd = new MySqlCommand(query, Conn);
             DataTable queryResults = new DataTable();
-            if (qParams != null && qParams.GetLength(0) > 0)
-            {
-                for (int x = 0; x < qParams.GetLength(0); x += 1)
-                {
-                    cmd.Parameters.AddWithValue(qParams[x][0], qParams[x][1]);                
+            if (qParams != null && qParams.Count() > 0) {
+                foreach (string[] qParam in qParams) { 
+                    cmd.Parameters.AddWithValue(qParam[0], qParam[1]);   
                 }
             }
             Conn.Open();
