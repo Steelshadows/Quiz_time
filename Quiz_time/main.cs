@@ -39,7 +39,7 @@ namespace Quiz_time
         {
             dynamic item =  lsb_quizlist.SelectedItem;
             selectedList = item;
-            Console.WriteLine(selectedList);
+            Console.WriteLine(item);
             lb_selec_quizNaam_0.Text = item.Name;
             lb_selec_quizNaam_1.Text = item.Name;
             lb_selec_quizNaam_2.Text = item.Name;
@@ -81,7 +81,7 @@ namespace Quiz_time
 
         private void btn_new_question_Click(object sender, EventArgs e)
         {
-            lsb_question_select.Items.Insert(lsb_question_select.Items.Count, new { Name = "nieuwe vraag", Question_id = "new", Question="nieuwe vraag",correct="a" ,a="" ,b="" ,c="" ,d="" });
+            lsb_question_select.Items.Insert(lsb_question_select.Items.Count, new { Name = "nieuwe vraag", Question_id = 0, Question="nieuwe vraag",correct="a" ,a="" ,b="" ,c="" ,d="" });
             
         }
 
@@ -109,9 +109,73 @@ namespace Quiz_time
         private void lsb_question_select_SelectedIndexChanged(object sender, EventArgs e)
         {
             dynamic item = lsb_question_select.SelectedItem;
-            selectedList = item;
-            Console.WriteLine(item);
             selectedQuestion = item;
+            Console.WriteLine(item);
+            txb_update_question.Text = item.Question;
+            txb_ans_a.Text = item.a;
+            txb_ans_b.Text = item.b;
+            txb_ans_c.Text = item.c;
+            txb_ans_d.Text = item.d;
+            string corre = item.correct;
+            char corr = Char.Parse(corre);
+            switch (corr)
+            {
+                case 'a':
+                    rb_ans_a.Checked = true;
+                    break;
+                case 'b':
+                    rb_ans_b.Checked = true;
+                    break;
+                case 'c':
+                    rb_ans_c.Checked = true;
+                    break;
+                case 'd':
+                    rb_ans_d.Checked = true;
+                    break;                
+            }
+        }
+
+        private void btn_update_question_Click(object sender, EventArgs e)
+        {
+            dynamic item = selectedQuestion;
+            int listId = selectedList.Value;
+            Console.WriteLine(listId);
+            int qid = item.Question_id;
+            String corr = "" ;
+            if (rb_ans_a.Checked) { corr = "a"; }
+            else if (rb_ans_b.Checked) { corr = "b"; }
+            else if (rb_ans_c.Checked) { corr = "c"; }
+            else if (rb_ans_d.Checked) { corr = "d"; }
+            List<string[]> sqlParams = new List<string[]>();
+            sqlParams.Add(new string[2] { "@qid", qid.ToString() });
+            sqlParams.Add(new string[2] { "@lid", listId.ToString() });
+            sqlParams.Add(new string[2] { "@question", txb_update_question.Text });
+            sqlParams.Add(new string[2] { "@ans_a", txb_ans_a.Text });
+            sqlParams.Add(new string[2] { "@ans_b", txb_ans_b.Text });
+            sqlParams.Add(new string[2] { "@ans_c", txb_ans_c.Text });
+            sqlParams.Add(new string[2] { "@ans_d", txb_ans_d.Text });
+            sqlParams.Add(new string[2] { "@correct", corr });
+            if (qid == 0)
+            {
+                string sql = "INSERT INTO `questions` (`question_id`, `list_id`, `question`, `correct`, `a`, `b`, `c`, `d`) VALUES (NULL, @lid, @question, @correct, @ans_a, @ans_b, @ans_c, @ans_d)";
+                //SQLConn.displayQuery(sql, sqlParams);
+                SQLConn.executeQuery(sql, sqlParams);
+                Console.WriteLine("insert");
+            }
+            else
+            {
+                string sql = "UPDATE `questions` SET `question`=@question,`correct`=@correct,`a`=@ans_a,`b`=@ans_b,`c`=@ans_c,`d`=@ans_d WHERE `question_id` = @qid";
+                //SQLConn.displayQuery(sql, sqlParams);
+                SQLConn.executeQuery(sql, sqlParams);
+                Console.WriteLine("update");
+            }
+            reload_lsb_question_select();
+        }
+
+        private void btn_start_quiz_Click(object sender, EventArgs e)
+        {
+            int listId = selectedList.Value;
+            new player(listId);
         }
     }
 }

@@ -41,28 +41,28 @@
             this.cb_am_nakijken = new System.Windows.Forms.ComboBox();
             this.btn_start_quiz = new System.Windows.Forms.Button();
             this.tab_select = new System.Windows.Forms.TabPage();
+            this.btn_delete_selected_list = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.btn_new_list = new System.Windows.Forms.Button();
             this.txb_new_list = new System.Windows.Forms.TextBox();
             this.lb_selec_quizNaam_1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lsb_quizlist = new System.Windows.Forms.ListBox();
             this.tab_edit = new System.Windows.Forms.TabPage();
+            this.btn_update_question = new System.Windows.Forms.Button();
+            this.txb_ans_d = new System.Windows.Forms.TextBox();
+            this.txb_ans_c = new System.Windows.Forms.TextBox();
+            this.txb_ans_b = new System.Windows.Forms.TextBox();
+            this.txb_ans_a = new System.Windows.Forms.TextBox();
+            this.txb_update_question = new System.Windows.Forms.TextBox();
+            this.rb_ans_d = new System.Windows.Forms.RadioButton();
+            this.rb_ans_c = new System.Windows.Forms.RadioButton();
+            this.rb_ans_b = new System.Windows.Forms.RadioButton();
+            this.rb_ans_a = new System.Windows.Forms.RadioButton();
             this.btn_new_question = new System.Windows.Forms.Button();
             this.lsb_question_select = new System.Windows.Forms.ListBox();
             this.lb_selec_quizNaam_2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btn_delete_selected_list = new System.Windows.Forms.Button();
-            this.rb_ans_a = new System.Windows.Forms.RadioButton();
-            this.rb_ans_b = new System.Windows.Forms.RadioButton();
-            this.rb_ans_c = new System.Windows.Forms.RadioButton();
-            this.rb_ans_d = new System.Windows.Forms.RadioButton();
-            this.txb_update_question = new System.Windows.Forms.TextBox();
-            this.txb_ans_a = new System.Windows.Forms.TextBox();
-            this.txb_ans_b = new System.Windows.Forms.TextBox();
-            this.txb_ans_c = new System.Windows.Forms.TextBox();
-            this.txb_ans_d = new System.Windows.Forms.TextBox();
-            this.btn_update_question = new System.Windows.Forms.Button();
             this.tab_controll.SuspendLayout();
             this.tab_operator.SuspendLayout();
             this.tab_select.SuspendLayout();
@@ -75,10 +75,10 @@
             this.tab_controll.Controls.Add(this.tab_select);
             this.tab_controll.Controls.Add(this.tab_edit);
             this.tab_controll.Location = new System.Drawing.Point(0, 0);
-            this.tab_controll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tab_controll.Margin = new System.Windows.Forms.Padding(2);
             this.tab_controll.Name = "tab_controll";
             this.tab_controll.SelectedIndex = 0;
-            this.tab_controll.Size = new System.Drawing.Size(797, 450);
+            this.tab_controll.Size = new System.Drawing.Size(598, 366);
             this.tab_controll.TabIndex = 0;
             // 
             // tab_operator
@@ -93,21 +93,21 @@
             this.tab_operator.Controls.Add(this.cb_am_tijd);
             this.tab_operator.Controls.Add(this.cb_am_nakijken);
             this.tab_operator.Controls.Add(this.btn_start_quiz);
-            this.tab_operator.Location = new System.Drawing.Point(4, 25);
-            this.tab_operator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tab_operator.Location = new System.Drawing.Point(4, 22);
+            this.tab_operator.Margin = new System.Windows.Forms.Padding(2);
             this.tab_operator.Name = "tab_operator";
-            this.tab_operator.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tab_operator.Size = new System.Drawing.Size(789, 421);
+            this.tab_operator.Padding = new System.Windows.Forms.Padding(2);
+            this.tab_operator.Size = new System.Drawing.Size(590, 340);
             this.tab_operator.TabIndex = 0;
             this.tab_operator.Text = "operator";
             this.tab_operator.UseVisualStyleBackColor = true;
             // 
             // btn_selectQuiz
             // 
-            this.btn_selectQuiz.Location = new System.Drawing.Point(19, 71);
-            this.btn_selectQuiz.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_selectQuiz.Location = new System.Drawing.Point(14, 58);
+            this.btn_selectQuiz.Margin = new System.Windows.Forms.Padding(2);
             this.btn_selectQuiz.Name = "btn_selectQuiz";
-            this.btn_selectQuiz.Size = new System.Drawing.Size(181, 71);
+            this.btn_selectQuiz.Size = new System.Drawing.Size(136, 58);
             this.btn_selectQuiz.TabIndex = 19;
             this.btn_selectQuiz.Text = "selecteer andere quiz";
             this.btn_selectQuiz.UseVisualStyleBackColor = true;
@@ -115,10 +115,10 @@
             // 
             // btn_editQuiz
             // 
-            this.btn_editQuiz.Location = new System.Drawing.Point(19, 167);
-            this.btn_editQuiz.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_editQuiz.Location = new System.Drawing.Point(14, 136);
+            this.btn_editQuiz.Margin = new System.Windows.Forms.Padding(2);
             this.btn_editQuiz.Name = "btn_editQuiz";
-            this.btn_editQuiz.Size = new System.Drawing.Size(181, 71);
+            this.btn_editQuiz.Size = new System.Drawing.Size(136, 58);
             this.btn_editQuiz.TabIndex = 18;
             this.btn_editQuiz.Text = "verander quiz";
             this.btn_editQuiz.UseVisualStyleBackColor = true;
@@ -127,45 +127,50 @@
             // lb_selec_quizNaam_0
             // 
             this.lb_selec_quizNaam_0.AutoSize = true;
-            this.lb_selec_quizNaam_0.Location = new System.Drawing.Point(3, 34);
+            this.lb_selec_quizNaam_0.Location = new System.Drawing.Point(2, 28);
+            this.lb_selec_quizNaam_0.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_selec_quizNaam_0.Name = "lb_selec_quizNaam_0";
-            this.lb_selec_quizNaam_0.Size = new System.Drawing.Size(89, 17);
+            this.lb_selec_quizNaam_0.Size = new System.Drawing.Size(67, 13);
             this.lb_selec_quizNaam_0.TabIndex = 17;
             this.lb_selec_quizNaam_0.Text = "[ quiz naam ]";
             // 
             // lb_sel_label
             // 
             this.lb_sel_label.AutoSize = true;
-            this.lb_sel_label.Location = new System.Drawing.Point(3, 2);
+            this.lb_sel_label.Location = new System.Drawing.Point(2, 2);
+            this.lb_sel_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_sel_label.Name = "lb_sel_label";
-            this.lb_sel_label.Size = new System.Drawing.Size(135, 17);
+            this.lb_sel_label.Size = new System.Drawing.Size(101, 13);
             this.lb_sel_label.TabIndex = 16;
             this.lb_sel_label.Text = "geselecteerde Quiz:";
             // 
             // lb_am_afspeelmodus
             // 
             this.lb_am_afspeelmodus.AutoSize = true;
-            this.lb_am_afspeelmodus.Location = new System.Drawing.Point(632, 7);
+            this.lb_am_afspeelmodus.Location = new System.Drawing.Point(474, 6);
+            this.lb_am_afspeelmodus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_am_afspeelmodus.Name = "lb_am_afspeelmodus";
-            this.lb_am_afspeelmodus.Size = new System.Drawing.Size(104, 17);
+            this.lb_am_afspeelmodus.Size = new System.Drawing.Size(78, 13);
             this.lb_am_afspeelmodus.TabIndex = 15;
             this.lb_am_afspeelmodus.Text = "afspeel modus:";
             // 
             // lb_am_tijd
             // 
             this.lb_am_tijd.AutoSize = true;
-            this.lb_am_tijd.Location = new System.Drawing.Point(531, 119);
+            this.lb_am_tijd.Location = new System.Drawing.Point(398, 97);
+            this.lb_am_tijd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_am_tijd.Name = "lb_am_tijd";
-            this.lb_am_tijd.Size = new System.Drawing.Size(75, 17);
+            this.lb_am_tijd.Size = new System.Drawing.Size(55, 13);
             this.lb_am_tijd.TabIndex = 14;
             this.lb_am_tijd.Text = "progressie";
             // 
             // lb_am_nakijken
             // 
             this.lb_am_nakijken.AutoSize = true;
-            this.lb_am_nakijken.Location = new System.Drawing.Point(531, 49);
+            this.lb_am_nakijken.Location = new System.Drawing.Point(398, 40);
+            this.lb_am_nakijken.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_am_nakijken.Name = "lb_am_nakijken";
-            this.lb_am_nakijken.Size = new System.Drawing.Size(60, 17);
+            this.lb_am_nakijken.Size = new System.Drawing.Size(47, 13);
             this.lb_am_nakijken.TabIndex = 13;
             this.lb_am_nakijken.Text = "nakijken";
             // 
@@ -176,10 +181,10 @@
             this.cb_am_tijd.Items.AddRange(new object[] {
             "10 seconden",
             "click"});
-            this.cb_am_tijd.Location = new System.Drawing.Point(635, 119);
-            this.cb_am_tijd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cb_am_tijd.Location = new System.Drawing.Point(476, 97);
+            this.cb_am_tijd.Margin = new System.Windows.Forms.Padding(2);
             this.cb_am_tijd.Name = "cb_am_tijd";
-            this.cb_am_tijd.Size = new System.Drawing.Size(139, 24);
+            this.cb_am_tijd.Size = new System.Drawing.Size(105, 21);
             this.cb_am_tijd.TabIndex = 12;
             // 
             // cb_am_nakijken
@@ -189,21 +194,22 @@
             "check vraag",
             "check lijst",
             "no check"});
-            this.cb_am_nakijken.Location = new System.Drawing.Point(635, 49);
-            this.cb_am_nakijken.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cb_am_nakijken.Location = new System.Drawing.Point(476, 40);
+            this.cb_am_nakijken.Margin = new System.Windows.Forms.Padding(2);
             this.cb_am_nakijken.Name = "cb_am_nakijken";
-            this.cb_am_nakijken.Size = new System.Drawing.Size(139, 24);
+            this.cb_am_nakijken.Size = new System.Drawing.Size(105, 21);
             this.cb_am_nakijken.TabIndex = 11;
             // 
             // btn_start_quiz
             // 
-            this.btn_start_quiz.Location = new System.Drawing.Point(592, 342);
-            this.btn_start_quiz.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_start_quiz.Location = new System.Drawing.Point(444, 278);
+            this.btn_start_quiz.Margin = new System.Windows.Forms.Padding(2);
             this.btn_start_quiz.Name = "btn_start_quiz";
-            this.btn_start_quiz.Size = new System.Drawing.Size(181, 71);
+            this.btn_start_quiz.Size = new System.Drawing.Size(136, 58);
             this.btn_start_quiz.TabIndex = 10;
             this.btn_start_quiz.Text = "start quiz";
             this.btn_start_quiz.UseVisualStyleBackColor = true;
+            this.btn_start_quiz.Click += new System.EventHandler(this.btn_start_quiz_Click);
             // 
             // tab_select
             // 
@@ -214,20 +220,42 @@
             this.tab_select.Controls.Add(this.lb_selec_quizNaam_1);
             this.tab_select.Controls.Add(this.label2);
             this.tab_select.Controls.Add(this.lsb_quizlist);
-            this.tab_select.Location = new System.Drawing.Point(4, 25);
-            this.tab_select.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tab_select.Location = new System.Drawing.Point(4, 22);
+            this.tab_select.Margin = new System.Windows.Forms.Padding(2);
             this.tab_select.Name = "tab_select";
-            this.tab_select.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tab_select.Size = new System.Drawing.Size(789, 421);
+            this.tab_select.Padding = new System.Windows.Forms.Padding(2);
+            this.tab_select.Size = new System.Drawing.Size(590, 340);
             this.tab_select.TabIndex = 1;
             this.tab_select.Text = "select quiz";
             this.tab_select.UseVisualStyleBackColor = true;
             // 
+            // btn_delete_selected_list
+            // 
+            this.btn_delete_selected_list.Location = new System.Drawing.Point(447, 295);
+            this.btn_delete_selected_list.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_delete_selected_list.Name = "btn_delete_selected_list";
+            this.btn_delete_selected_list.Size = new System.Drawing.Size(113, 38);
+            this.btn_delete_selected_list.TabIndex = 23;
+            this.btn_delete_selected_list.Text = "verweider geselecteerde lijst";
+            this.btn_delete_selected_list.UseVisualStyleBackColor = true;
+            this.btn_delete_selected_list.Click += new System.EventHandler(this.btn_delete_selected_list_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(185, 9);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 13);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "nieuwe lijst naam:";
+            // 
             // btn_new_list
             // 
-            this.btn_new_list.Location = new System.Drawing.Point(615, 70);
+            this.btn_new_list.Location = new System.Drawing.Point(461, 57);
+            this.btn_new_list.Margin = new System.Windows.Forms.Padding(2);
             this.btn_new_list.Name = "btn_new_list";
-            this.btn_new_list.Size = new System.Drawing.Size(132, 30);
+            this.btn_new_list.Size = new System.Drawing.Size(99, 24);
             this.btn_new_list.TabIndex = 21;
             this.btn_new_list.Text = "maak nieuwe lijst";
             this.btn_new_list.UseVisualStyleBackColor = true;
@@ -235,26 +263,29 @@
             // 
             // txb_new_list
             // 
-            this.txb_new_list.Location = new System.Drawing.Point(247, 34);
+            this.txb_new_list.Location = new System.Drawing.Point(185, 28);
+            this.txb_new_list.Margin = new System.Windows.Forms.Padding(2);
             this.txb_new_list.Name = "txb_new_list";
-            this.txb_new_list.Size = new System.Drawing.Size(500, 22);
+            this.txb_new_list.Size = new System.Drawing.Size(376, 20);
             this.txb_new_list.TabIndex = 20;
             // 
             // lb_selec_quizNaam_1
             // 
             this.lb_selec_quizNaam_1.AutoSize = true;
-            this.lb_selec_quizNaam_1.Location = new System.Drawing.Point(3, 34);
+            this.lb_selec_quizNaam_1.Location = new System.Drawing.Point(2, 28);
+            this.lb_selec_quizNaam_1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_selec_quizNaam_1.Name = "lb_selec_quizNaam_1";
-            this.lb_selec_quizNaam_1.Size = new System.Drawing.Size(89, 17);
+            this.lb_selec_quizNaam_1.Size = new System.Drawing.Size(67, 13);
             this.lb_selec_quizNaam_1.TabIndex = 19;
             this.lb_selec_quizNaam_1.Text = "[ quiz naam ]";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 2);
+            this.label2.Location = new System.Drawing.Point(2, 2);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 17);
+            this.label2.Size = new System.Drawing.Size(101, 13);
             this.label2.TabIndex = 18;
             this.label2.Text = "geselecteerde Quiz:";
             // 
@@ -262,13 +293,12 @@
             // 
             this.lsb_quizlist.DisplayMember = "Name";
             this.lsb_quizlist.FormattingEnabled = true;
-            this.lsb_quizlist.ItemHeight = 16;
             this.lsb_quizlist.Items.AddRange(new object[] {
             ""});
-            this.lsb_quizlist.Location = new System.Drawing.Point(8, 70);
-            this.lsb_quizlist.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lsb_quizlist.Location = new System.Drawing.Point(6, 57);
+            this.lsb_quizlist.Margin = new System.Windows.Forms.Padding(2);
             this.lsb_quizlist.Name = "lsb_quizlist";
-            this.lsb_quizlist.Size = new System.Drawing.Size(153, 340);
+            this.lsb_quizlist.Size = new System.Drawing.Size(116, 277);
             this.lsb_quizlist.TabIndex = 0;
             this.lsb_quizlist.ValueMember = "Value";
             this.lsb_quizlist.SelectedIndexChanged += new System.EventHandler(this.lsb_quizlist_SelectedIndexChanged);
@@ -289,21 +319,121 @@
             this.tab_edit.Controls.Add(this.lsb_question_select);
             this.tab_edit.Controls.Add(this.lb_selec_quizNaam_2);
             this.tab_edit.Controls.Add(this.label4);
-            this.tab_edit.Location = new System.Drawing.Point(4, 25);
-            this.tab_edit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tab_edit.Location = new System.Drawing.Point(4, 22);
+            this.tab_edit.Margin = new System.Windows.Forms.Padding(2);
             this.tab_edit.Name = "tab_edit";
-            this.tab_edit.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tab_edit.Size = new System.Drawing.Size(789, 421);
+            this.tab_edit.Padding = new System.Windows.Forms.Padding(2);
+            this.tab_edit.Size = new System.Drawing.Size(590, 340);
             this.tab_edit.TabIndex = 2;
             this.tab_edit.Text = "edit quiz";
             this.tab_edit.UseVisualStyleBackColor = true;
             // 
+            // btn_update_question
+            // 
+            this.btn_update_question.Location = new System.Drawing.Point(450, 284);
+            this.btn_update_question.Name = "btn_update_question";
+            this.btn_update_question.Size = new System.Drawing.Size(128, 50);
+            this.btn_update_question.TabIndex = 33;
+            this.btn_update_question.Text = "opslaan";
+            this.btn_update_question.UseVisualStyleBackColor = true;
+            this.btn_update_question.Click += new System.EventHandler(this.btn_update_question_Click);
+            // 
+            // txb_ans_d
+            // 
+            this.txb_ans_d.Location = new System.Drawing.Point(385, 201);
+            this.txb_ans_d.Margin = new System.Windows.Forms.Padding(2);
+            this.txb_ans_d.Multiline = true;
+            this.txb_ans_d.Name = "txb_ans_d";
+            this.txb_ans_d.Size = new System.Drawing.Size(155, 75);
+            this.txb_ans_d.TabIndex = 32;
+            // 
+            // txb_ans_c
+            // 
+            this.txb_ans_c.Location = new System.Drawing.Point(157, 201);
+            this.txb_ans_c.Margin = new System.Windows.Forms.Padding(2);
+            this.txb_ans_c.Multiline = true;
+            this.txb_ans_c.Name = "txb_ans_c";
+            this.txb_ans_c.Size = new System.Drawing.Size(155, 75);
+            this.txb_ans_c.TabIndex = 31;
+            // 
+            // txb_ans_b
+            // 
+            this.txb_ans_b.Location = new System.Drawing.Point(385, 97);
+            this.txb_ans_b.Margin = new System.Windows.Forms.Padding(2);
+            this.txb_ans_b.Multiline = true;
+            this.txb_ans_b.Name = "txb_ans_b";
+            this.txb_ans_b.Size = new System.Drawing.Size(155, 75);
+            this.txb_ans_b.TabIndex = 30;
+            // 
+            // txb_ans_a
+            // 
+            this.txb_ans_a.Location = new System.Drawing.Point(157, 97);
+            this.txb_ans_a.Margin = new System.Windows.Forms.Padding(2);
+            this.txb_ans_a.Multiline = true;
+            this.txb_ans_a.Name = "txb_ans_a";
+            this.txb_ans_a.Size = new System.Drawing.Size(155, 75);
+            this.txb_ans_a.TabIndex = 29;
+            // 
+            // txb_update_question
+            // 
+            this.txb_update_question.Location = new System.Drawing.Point(157, 28);
+            this.txb_update_question.Margin = new System.Windows.Forms.Padding(2);
+            this.txb_update_question.Name = "txb_update_question";
+            this.txb_update_question.Size = new System.Drawing.Size(422, 20);
+            this.txb_update_question.TabIndex = 28;
+            // 
+            // rb_ans_d
+            // 
+            this.rb_ans_d.AutoSize = true;
+            this.rb_ans_d.Location = new System.Drawing.Point(422, 179);
+            this.rb_ans_d.Margin = new System.Windows.Forms.Padding(2);
+            this.rb_ans_d.Name = "rb_ans_d";
+            this.rb_ans_d.Size = new System.Drawing.Size(80, 17);
+            this.rb_ans_d.TabIndex = 27;
+            this.rb_ans_d.TabStop = true;
+            this.rb_ans_d.Text = "antwoord D";
+            this.rb_ans_d.UseVisualStyleBackColor = true;
+            // 
+            // rb_ans_c
+            // 
+            this.rb_ans_c.AutoSize = true;
+            this.rb_ans_c.Location = new System.Drawing.Point(188, 179);
+            this.rb_ans_c.Margin = new System.Windows.Forms.Padding(2);
+            this.rb_ans_c.Name = "rb_ans_c";
+            this.rb_ans_c.Size = new System.Drawing.Size(79, 17);
+            this.rb_ans_c.TabIndex = 26;
+            this.rb_ans_c.TabStop = true;
+            this.rb_ans_c.Text = "antwoord C";
+            this.rb_ans_c.UseVisualStyleBackColor = true;
+            // 
+            // rb_ans_b
+            // 
+            this.rb_ans_b.AutoSize = true;
+            this.rb_ans_b.Location = new System.Drawing.Point(422, 75);
+            this.rb_ans_b.Margin = new System.Windows.Forms.Padding(2);
+            this.rb_ans_b.Name = "rb_ans_b";
+            this.rb_ans_b.Size = new System.Drawing.Size(79, 17);
+            this.rb_ans_b.TabIndex = 25;
+            this.rb_ans_b.Text = "antwoord B";
+            this.rb_ans_b.UseVisualStyleBackColor = true;
+            // 
+            // rb_ans_a
+            // 
+            this.rb_ans_a.AutoSize = true;
+            this.rb_ans_a.Location = new System.Drawing.Point(188, 75);
+            this.rb_ans_a.Margin = new System.Windows.Forms.Padding(2);
+            this.rb_ans_a.Name = "rb_ans_a";
+            this.rb_ans_a.Size = new System.Drawing.Size(79, 17);
+            this.rb_ans_a.TabIndex = 24;
+            this.rb_ans_a.TabStop = true;
+            this.rb_ans_a.Text = "antwoord A";
+            this.rb_ans_a.UseVisualStyleBackColor = true;
+            // 
             // btn_new_question
             // 
-            this.btn_new_question.Location = new System.Drawing.Point(7, 384);
-            this.btn_new_question.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_new_question.Location = new System.Drawing.Point(5, 312);
             this.btn_new_question.Name = "btn_new_question";
-            this.btn_new_question.Size = new System.Drawing.Size(156, 28);
+            this.btn_new_question.Size = new System.Drawing.Size(117, 23);
             this.btn_new_question.TabIndex = 23;
             this.btn_new_question.Text = "nieuwe vraag";
             this.btn_new_question.UseVisualStyleBackColor = true;
@@ -313,13 +443,12 @@
             // 
             this.lsb_question_select.DisplayMember = "Name";
             this.lsb_question_select.FormattingEnabled = true;
-            this.lsb_question_select.ItemHeight = 16;
             this.lsb_question_select.Items.AddRange(new object[] {
             ""});
-            this.lsb_question_select.Location = new System.Drawing.Point(8, 70);
-            this.lsb_question_select.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.lsb_question_select.Location = new System.Drawing.Point(6, 57);
+            this.lsb_question_select.Margin = new System.Windows.Forms.Padding(2);
             this.lsb_question_select.Name = "lsb_question_select";
-            this.lsb_question_select.Size = new System.Drawing.Size(153, 308);
+            this.lsb_question_select.Size = new System.Drawing.Size(116, 251);
             this.lsb_question_select.TabIndex = 22;
             this.lsb_question_select.ValueMember = "Value";
             this.lsb_question_select.SelectedIndexChanged += new System.EventHandler(this.lsb_question_select_SelectedIndexChanged);
@@ -327,139 +456,30 @@
             // lb_selec_quizNaam_2
             // 
             this.lb_selec_quizNaam_2.AutoSize = true;
-            this.lb_selec_quizNaam_2.Location = new System.Drawing.Point(3, 34);
+            this.lb_selec_quizNaam_2.Location = new System.Drawing.Point(2, 28);
+            this.lb_selec_quizNaam_2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb_selec_quizNaam_2.Name = "lb_selec_quizNaam_2";
-            this.lb_selec_quizNaam_2.Size = new System.Drawing.Size(89, 17);
+            this.lb_selec_quizNaam_2.Size = new System.Drawing.Size(67, 13);
             this.lb_selec_quizNaam_2.TabIndex = 21;
             this.lb_selec_quizNaam_2.Text = "[ quiz naam ]";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 2);
+            this.label4.Location = new System.Drawing.Point(2, 2);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(135, 17);
+            this.label4.Size = new System.Drawing.Size(101, 13);
             this.label4.TabIndex = 20;
             this.label4.Text = "geselecteerde Quiz:";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(247, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 17);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "nieuwe lijst naam:";
-            // 
-            // btn_delete_selected_list
-            // 
-            this.btn_delete_selected_list.Location = new System.Drawing.Point(596, 363);
-            this.btn_delete_selected_list.Name = "btn_delete_selected_list";
-            this.btn_delete_selected_list.Size = new System.Drawing.Size(151, 47);
-            this.btn_delete_selected_list.TabIndex = 23;
-            this.btn_delete_selected_list.Text = "verweider geselecteerde lijst";
-            this.btn_delete_selected_list.UseVisualStyleBackColor = true;
-            this.btn_delete_selected_list.Click += new System.EventHandler(this.btn_delete_selected_list_Click);
-            // 
-            // rb_ans_a
-            // 
-            this.rb_ans_a.AutoSize = true;
-            this.rb_ans_a.Location = new System.Drawing.Point(251, 92);
-            this.rb_ans_a.Name = "rb_ans_a";
-            this.rb_ans_a.Size = new System.Drawing.Size(100, 21);
-            this.rb_ans_a.TabIndex = 24;
-            this.rb_ans_a.TabStop = true;
-            this.rb_ans_a.Text = "antwoord A";
-            this.rb_ans_a.UseVisualStyleBackColor = true;
-            // 
-            // rb_ans_b
-            // 
-            this.rb_ans_b.AutoSize = true;
-            this.rb_ans_b.Location = new System.Drawing.Point(562, 92);
-            this.rb_ans_b.Name = "rb_ans_b";
-            this.rb_ans_b.Size = new System.Drawing.Size(100, 21);
-            this.rb_ans_b.TabIndex = 25;
-            this.rb_ans_b.Text = "antwoord B";
-            this.rb_ans_b.UseVisualStyleBackColor = true;
-            // 
-            // rb_ans_c
-            // 
-            this.rb_ans_c.AutoSize = true;
-            this.rb_ans_c.Location = new System.Drawing.Point(251, 220);
-            this.rb_ans_c.Name = "rb_ans_c";
-            this.rb_ans_c.Size = new System.Drawing.Size(100, 21);
-            this.rb_ans_c.TabIndex = 26;
-            this.rb_ans_c.TabStop = true;
-            this.rb_ans_c.Text = "antwoord C";
-            this.rb_ans_c.UseVisualStyleBackColor = true;
-            // 
-            // rb_ans_d
-            // 
-            this.rb_ans_d.AutoSize = true;
-            this.rb_ans_d.Location = new System.Drawing.Point(562, 220);
-            this.rb_ans_d.Name = "rb_ans_d";
-            this.rb_ans_d.Size = new System.Drawing.Size(101, 21);
-            this.rb_ans_d.TabIndex = 27;
-            this.rb_ans_d.TabStop = true;
-            this.rb_ans_d.Text = "antwoord D";
-            this.rb_ans_d.UseVisualStyleBackColor = true;
-            // 
-            // txb_update_question
-            // 
-            this.txb_update_question.Location = new System.Drawing.Point(209, 34);
-            this.txb_update_question.Name = "txb_update_question";
-            this.txb_update_question.Size = new System.Drawing.Size(561, 22);
-            this.txb_update_question.TabIndex = 28;
-            // 
-            // txb_ans_a
-            // 
-            this.txb_ans_a.Location = new System.Drawing.Point(209, 119);
-            this.txb_ans_a.Multiline = true;
-            this.txb_ans_a.Name = "txb_ans_a";
-            this.txb_ans_a.Size = new System.Drawing.Size(205, 91);
-            this.txb_ans_a.TabIndex = 29;
-            // 
-            // txb_ans_b
-            // 
-            this.txb_ans_b.Location = new System.Drawing.Point(513, 119);
-            this.txb_ans_b.Multiline = true;
-            this.txb_ans_b.Name = "txb_ans_b";
-            this.txb_ans_b.Size = new System.Drawing.Size(205, 91);
-            this.txb_ans_b.TabIndex = 30;
-            // 
-            // txb_ans_c
-            // 
-            this.txb_ans_c.Location = new System.Drawing.Point(209, 247);
-            this.txb_ans_c.Multiline = true;
-            this.txb_ans_c.Name = "txb_ans_c";
-            this.txb_ans_c.Size = new System.Drawing.Size(205, 91);
-            this.txb_ans_c.TabIndex = 31;
-            // 
-            // txb_ans_d
-            // 
-            this.txb_ans_d.Location = new System.Drawing.Point(513, 247);
-            this.txb_ans_d.Multiline = true;
-            this.txb_ans_d.Name = "txb_ans_d";
-            this.txb_ans_d.Size = new System.Drawing.Size(205, 91);
-            this.txb_ans_d.TabIndex = 32;
-            // 
-            // btn_update_question
-            // 
-            this.btn_update_question.Location = new System.Drawing.Point(600, 350);
-            this.btn_update_question.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_update_question.Name = "btn_update_question";
-            this.btn_update_question.Size = new System.Drawing.Size(170, 62);
-            this.btn_update_question.TabIndex = 33;
-            this.btn_update_question.Text = "nieuwe vraag";
-            this.btn_update_question.UseVisualStyleBackColor = true;
-            // 
             // Quiz_time
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.tab_controll);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Quiz_time";
             this.Text = "Quiz time";
             this.tab_controll.ResumeLayout(false);

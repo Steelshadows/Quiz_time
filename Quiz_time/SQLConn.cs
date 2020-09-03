@@ -53,6 +53,17 @@ namespace Quiz_time
 
             return queryResults;
         }
+        public void displayQuery(string query, List<string[]> qParams = null)
+        {
+            MySqlCommand cmd = new MySqlCommand(query, Conn);
+            DataTable queryResults = new DataTable();
+            if (qParams != null && qParams.Count() > 0) {
+                foreach (string[] qParam in qParams) { 
+                    cmd.Parameters.AddWithValue(qParam[0], qParam[1]);   
+                }
+            }
+            Console.WriteLine(cmd.CommandText);
+        }
 
     }
 }
