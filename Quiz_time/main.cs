@@ -175,7 +175,16 @@ namespace Quiz_time
         private void btn_start_quiz_Click(object sender, EventArgs e)
         {
             int listId = selectedList.Value;
-            new player(listId);
+            string afspeelModus = cb_am_tijd.SelectedItem.ToString();
+            string nakijkModus = cb_am_nakijken.SelectedItem.ToString();
+            player form2 = new player(
+                new playerClass(
+                    listId,
+                    afspeelModus,
+                    nakijkModus
+                )
+            );
+            form2.Show();
         }
     }
 }
