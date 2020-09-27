@@ -37,7 +37,8 @@ namespace Quiz_time
             if (timer == 0) { 
                 nextQuestion();
                 if (QorA == 1)timer = 10;
-                if (QorA == 0)timer = 3;
+                if (QorA == 0 && currentQuiz.nakijkmodus == "check lijst") timer = 10;
+                else timer = 3;
             }
             lb_timer.Text = timer.ToString();
             timer--;
@@ -58,6 +59,9 @@ namespace Quiz_time
             }
         }
         private void nextQuestion() {
+            Console.WriteLine("start nexT");
+            int debugval = 1;
+            
             if (currentQuiz.nakijkmodus == "check vraag" && QorA == 0)
             {
                 groupBox1.BackColor = SystemColors.Control;
@@ -71,6 +75,7 @@ namespace Quiz_time
                     lb_ans_c.Text = currentQuiz.questions[currentQuestion].ans_c;
                     lb_ans_d.Text = currentQuiz.questions[currentQuestion].ans_d;
                     lb_question.Text = currentQuiz.questions[currentQuestion].playerQuestion;
+                    pct_playerImg.Load(currentQuiz.questions[currentQuestion].questionImage);
                     currentQuestion++;
                     QorA = 1;
                 }
@@ -99,6 +104,12 @@ namespace Quiz_time
                     lb_ans_c.Text = currentQuiz.questions[currentQuestion].ans_c;
                     lb_ans_d.Text = currentQuiz.questions[currentQuestion].ans_d;
                     lb_question.Text = currentQuiz.questions[currentQuestion].playerQuestion;
+                    
+                    
+                    pct_playerImg.ImageLocation = currentQuiz.questions[currentQuestion].questionImage;
+                    Console.WriteLine(currentQuiz.questions[currentQuestion].questionImage);
+                    
+                    
                     currentQuestion++;
                 }
                 else if (QorA == 0)
@@ -162,6 +173,7 @@ namespace Quiz_time
                     lb_question.Text = "you are out of questions";
                 }
             }
+            
         }
     }
 }

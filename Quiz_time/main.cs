@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -155,16 +156,17 @@ namespace Quiz_time
             sqlParams.Add(new string[2] { "@ans_c", txb_ans_c.Text });
             sqlParams.Add(new string[2] { "@ans_d", txb_ans_d.Text });
             sqlParams.Add(new string[2] { "@correct", corr });
+            sqlParams.Add(new string[2] { "@img", txb_imgLink.Text });
             if (qid == 0)
             {
-                string sql = "INSERT INTO `questions` (`question_id`, `list_id`, `question`, `correct`, `a`, `b`, `c`, `d`) VALUES (NULL, @lid, @question, @correct, @ans_a, @ans_b, @ans_c, @ans_d)";
+                string sql = "INSERT INTO `questions` (`question_id`, `list_id`, `question`, `correct`, `a`, `b`, `c`, `d`, `Image_src`) VALUES (NULL, @lid, @question, @correct, @ans_a, @ans_b, @ans_c, @ans_d, @img)";
                 //SQLConn.displayQuery(sql, sqlParams);
                 SQLConn.executeQuery(sql, sqlParams);
                 Console.WriteLine("insert");
             }
             else
             {
-                string sql = "UPDATE `questions` SET `question`=@question,`correct`=@correct,`a`=@ans_a,`b`=@ans_b,`c`=@ans_c,`d`=@ans_d WHERE `question_id` = @qid";
+                string sql = "UPDATE `questions` SET `question`=@question,`correct`=@correct,`a`=@ans_a,`b`=@ans_b,`c`=@ans_c,`d`=@ans_d, `Image_src`=@img WHERE `question_id` = @qid";
                 //SQLConn.displayQuery(sql, sqlParams);
                 SQLConn.executeQuery(sql, sqlParams);
                 Console.WriteLine("update");
@@ -185,6 +187,37 @@ namespace Quiz_time
                 )
             );
             form2.Show();
+        }
+
+        private void btn_picture_Click(object sender, EventArgs e)
+        {
+
+            var fileContent = string.Empty;
+            var filePath = string.Empty;
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = "c:\\";
+                openFileDialog.Filter = "jpg files (*.jpg)|*.jpg";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    filePath = openFileDialog.FileName;
+
+
+                
+                }
+                txb_imgLink.Text =  filePath;
+            }
+            
+        }
+
+        private void txb_imgLink_TextChanged(object sender, EventArgs e)
+        {
+            txb_imgLink.Visible = true;
         }
     }
 }

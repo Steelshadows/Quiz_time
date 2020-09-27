@@ -21,11 +21,10 @@ namespace Quiz_time
             List<string[]> sqlParams = new List<string[]>();
             sqlParams.Add(new string[2] { "@list_id", listId.ToString() });
 
-            DataTable dt = SQLConn.selectQuery("SELECT `question_id`,`list_id`,`question`,`correct`,`a`,`b`,`c`,`d` FROM `questions` WHERE `list_id` = @list_id", sqlParams);
+            DataTable dt = SQLConn.selectQuery("SELECT `question_id`,`list_id`,`question`,`correct`,`a`,`b`,`c`,`d`,`image_src` FROM `questions` WHERE `list_id` = @list_id", sqlParams);
             foreach (DataRow dataRow in dt.Rows)
             {
                 questions.Add(new question(dataRow));
-                //lsb_question_select.Items.Insert(0, new { Name = dataRow.ItemArray[2], Value = dataRow.ItemArray[0] });
             }
         }
     }
@@ -33,6 +32,7 @@ namespace Quiz_time
         public string question_id;
         public string list_id;
         public string playerQuestion;
+        public string questionImage;
         public string ans_a;
         public string ans_b;
         public string ans_c;
@@ -46,6 +46,14 @@ namespace Quiz_time
             this.ans_b = (dataRow.ItemArray[5]).ToString();
             this.ans_c = (dataRow.ItemArray[6]).ToString();
             this.ans_d = (dataRow.ItemArray[7]).ToString();
+            if ((dataRow.ItemArray[8]).ToString() != string.Empty)
+            {
+                this.questionImage = (dataRow.ItemArray[8]).ToString();
+            }
+            else { 
+                this.questionImage = "C:\\Users\\itsam\\drives\\OneDrive - ROC Midden Nederland\\prjcts\\C#\\Quiz_time\\Quiz_time\\img_default\\question-man.jpg";
+            };
+
         }
 
     }
